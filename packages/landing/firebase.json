@@ -1,0 +1,60 @@
+{
+  "hosting": {
+    "public": "out",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [ 
+      {
+        "source": "home",
+        "destination": "/index.html" 
+      },
+      {
+        "source": "about",
+        "destination": "/about.html"
+      },
+      {
+        "source": "services",
+        "destination": "/services.html"
+      },
+      {
+        "source": "projects",
+        "destination": "/projects.html" 
+      },
+      {
+        "source": "contact",
+        "destination": "/contact.html" 
+      },
+      {
+        "source": "404",
+        "destination": "/404.html" 
+      },
+      {
+        "source": "blog",
+        "destination": "/blog.html" 
+      },
+      {
+        "source": "blog/Top-5-Reasons-Your-Company-Needs-a-Website",
+        "destination": "/blog/Top-5-Reasons-Your-Company-Needs-a-Website.html" 
+      },
+      {
+        "source": "blog/Why-Online-Branding-is-Important-for-Your-Business",
+        "destination": "/blog/Why-Online-Branding-is-Important-for-Your-Business.html" 
+      },
+      {
+        "source": "blog/What-is-Blockchain-Technology",
+        "destination": "/blog/What-is-Blockchain-Technology.html" 
+      },
+      {
+        "source": "sitemap.xml",
+        "destination": "/sitemap.xml" 
+      }
+    ]
+  },
+  "functions": {
+    "source": ".",
+    "predeploy": [
+      "npm --prefix \"$PROJECT_DIR\" install",
+      "npm --prefix \"$PROJECT_DIR\" run build"
+    ],
+    "runtime": "nodejs10"
+  }
+}
